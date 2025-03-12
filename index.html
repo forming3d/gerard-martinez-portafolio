@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerard Martínez - VFX & 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            border-bottom: 2px solid #00FFFF;
+        }
+        .logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            color: #00FFFF;
+            text-transform: uppercase;
+        }
+        nav a {
+            color: #FF00FF;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #00FFFF;
+            text-shadow: 0px 0px 10px #00FFFF;
+        }
+        .hero {
+            height: 100vh;
+            background: url('hero-video.mp4') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #00FFFF, #FF00FF);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: glitch 1.5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px 5px #00FFFF; }
+            100% { text-shadow: -2px -2px 5px #FF00FF; }
+        }
+        .section {
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.3);
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border: 2px solid #00FFFF;
+            color: #00FFFF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #00FFFF;
+            color: #000;
+            box-shadow: 0px 0px 15px #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Gerard Martínez</div>
+        <nav>
+            <a href="#about">Sobre mí</a>
+            <a href="#services">Servicios</a>
+            <a href="#portfolio">Portafolio</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Creando mundos visuales</h1>
+    </div>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Editor, colorista, artista VFX y videomapping con más de una década de experiencia.</p>
+        </div>
+    </section>
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Servicios</h2>
+            <p>Edición, VFX, 3D, Videomapping y más.</p>
+        </div>
+    </section>
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Portafolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">Proyecto 1</div>
+                <div class="portfolio-item">Proyecto 2</div>
+                <div class="portfolio-item">Proyecto 3</div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Contáctame para colaborar en tu próximo proyecto.</p>
+            <a href="mailto:gerarmanuel31@gmail.com" class="btn">Escríbeme</a>
+        </div>
+    </section>
+</body>
+</html>
