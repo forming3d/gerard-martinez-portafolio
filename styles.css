@@ -1,17 +1,20 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
     background-color: #1a1a1a;
+    line-height: 1.6;
 }
 
+/* Encabezado */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Grosor reducido */
-    background-color: #333;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,7 +29,7 @@ header .logo {
 }
 
 .logo-img {
-    width: 40px; /* Logo más pequeño */
+    width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
@@ -47,8 +50,14 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s;
 }
 
+nav ul li a:hover {
+    color: #ff4081;
+}
+
+/* Sección Hero */
 .hero {
     position: relative;
     height: 100vh;
@@ -68,47 +77,77 @@ nav ul li a {
     z-index: -1;
 }
 
+.hero-content {
+    z-index: 1;
+}
+
 .hero-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
-section {
-    padding: 60px 20px;
+.hero-content p {
+    font-size: 24px;
 }
 
-h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+/* Sección Sobre Mí */
+#sobre-mi {
+    padding: 80px 20px;
+    background-color: #222;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-content img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Sección Portafolio */
+#portafolio {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
+    justify-content: center;
 }
 
 .gallery-item {
     position: relative;
-    width: calc(33.333% - 10px);
+    width: calc(33.333% - 20px);
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .gallery-item img {
     width: 100%;
     display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 .overlay {
@@ -117,7 +156,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,20 +168,55 @@ h2 {
     opacity: 1;
 }
 
+.overlay div {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Sección Servicios */
+#servicios {
+    padding: 80px 20px;
+    background-color: #222;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-item {
-    background-color: #444;
+    background-color: #333;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 16px;
+}
+
+/* Sección Contacto */
+#contacto {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
 }
 
 .contact-info {
     text-align: center;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .social-links a {
@@ -150,11 +224,16 @@ h2 {
     color: #ff4081;
     font-size: 24px;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
+.social-links a:hover {
+    color: #fff;
+}
+
+/* Pie de página */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    margin-top: 40px;
+    background-color: #111;
 }
