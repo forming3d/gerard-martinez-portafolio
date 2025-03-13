@@ -169,7 +169,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
     position: relative;
     z-index: 1;
 }
@@ -177,7 +177,7 @@ h2 {
 .about-image img {
     width: 100%;
     border-radius: 10px;
-    border: 8px solid white; /* Borde más grueso y blanco */
+    border: 8px solid white;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
@@ -186,22 +186,30 @@ h2 {
     line-height: 1.8;
     position: relative;
     z-index: 1;
+    margin-top: 0;
 }
 
 .about-text h3 {
     font-size: 1.8rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
 .skills-container {
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 2px solid var(--primary-color); /* Borde rojo/rosa */
+    border: 2px solid var(--primary-color);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-column {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
@@ -335,4 +343,25 @@ h2 {
 .contact-form button {
     background: var(--primary-color);
     color: var(--text-light);
-    padding: 1rem 
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff3040;
+}
+
+/* === Footer === */
+footer {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-light);
+}
