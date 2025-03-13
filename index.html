@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #000;
+            background: black;
             color: #fff;
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -37,7 +37,7 @@
             color: #FF00FF;
             text-decoration: none;
             margin: 0 15px;
-            transition: color 0.3s, text-shadow 0.3s;
+            transition: 0.3s;
             font-weight: bold;
         }
         nav a:hover {
@@ -50,8 +50,16 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('Assets/Fondo.png') no-repeat center center/cover;
+            position: relative;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
         .hero h1 {
             font-size: 4rem;
@@ -62,46 +70,28 @@
             color: transparent;
             animation: glitch 1.5s infinite alternate;
         }
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px 5px #00FFFF; }
-            100% { text-shadow: -2px -2px 5px #FF00FF; }
-        }
-        .section {
-            padding: 100px 5%;
+        .logo-container {
             text-align: center;
-            border-bottom: 1px solid #333;
+            margin-top: 20px;
         }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .logo-container img {
+            width: 150px;
         }
-        .portfolio-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.3);
-            text-transform: uppercase;
-            font-weight: bold;
+        .pdf-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
         }
-        .portfolio-item:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
-        }
-        .btn {
+        .pdf-button a {
             display: inline-block;
             padding: 15px 30px;
-            margin-top: 20px;
             border: 2px solid #00FFFF;
             color: #00FFFF;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            transition: 0.3s;
         }
-        .btn:hover {
+        .pdf-button a:hover {
             background: #00FFFF;
             color: #000;
             box-shadow: 0px 0px 15px #00FFFF;
@@ -119,28 +109,22 @@
         </nav>
     </header>
     <div class="hero">
+        <video autoplay loop muted>
+            <source src="Assets/Naia2.mp4" type="video/mp4">
+        </video>
         <h1>Creando mundos visuales</h1>
+    </div>
+    <div class="logo-container">
+        <img src="Assets/Logo.png" alt="Logo">
     </div>
     <section id="about" class="section">
         <h2>Sobre mí</h2>
+        <img src="Assets/Cara_Artista.png" alt="Artista" style="width: 200px; display: block; margin: auto;">
         <p>Editor, colorista, artista VFX y videomapping con más de una década de experiencia.</p>
     </section>
-    <section id="services" class="section">
-        <h2>Servicios</h2>
-        <p>Edición, VFX, 3D, Videomapping y más.</p>
-    </section>
-    <section id="portfolio" class="section">
-        <h2>Portafolio</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">Proyecto 1</div>
-            <div class="portfolio-item">Proyecto 2</div>
-            <div class="portfolio-item">Proyecto 3</div>
-        </div>
-    </section>
-    <section id="contact" class="section">
-        <h2>Contacto</h2>
-        <p>Contáctame para colaborar en tu próximo proyecto.</p>
-        <a href="mailto:gerarmanuel31@gmail.com" class="btn">Escríbeme</a>
-    </section>
+    <div class="pdf-button">
+        <a href="Assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank">Ver Portafolio</a>
+    </div>
 </body>
 </html>
+
