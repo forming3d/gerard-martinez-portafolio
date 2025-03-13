@@ -157,23 +157,45 @@ h2 {
     align-items: center;
 }
 
-.about-grid img {
+.about-image img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,74,87,0.3);
+    border: 5px solid white; /* Borde blanco */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.badges-container {
-    display: flex;
-    gap: 1rem;
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
-.badge {
-    background: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
 /* === Sección Proyectos === */
