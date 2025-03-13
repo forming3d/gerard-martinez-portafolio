@@ -6,9 +6,15 @@
     <title>Gerard Martínez - VFX & 3D</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #00FFFF;
+            --secondary-color: #FF00FF;
+            --background-color: #000;
+            --text-color: #fff;
+        }
         body {
-            background: black;
-            color: #fff;
+            background: var(--background-color);
+            color: var(--text-color);
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
@@ -24,25 +30,25 @@
             top: 0;
             background: rgba(0, 0, 0, 0.9);
             z-index: 1000;
-            border-bottom: 2px solid #00FFFF;
+            border-bottom: 2px solid var(--primary-color);
             box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
         }
         .logo {
             font-family: 'Anton', sans-serif;
             font-size: 2rem;
-            color: #00FFFF;
+            color: var(--primary-color);
             text-transform: uppercase;
         }
         nav a {
-            color: #FF00FF;
+            color: var(--secondary-color);
             text-decoration: none;
             margin: 0 15px;
             transition: 0.3s;
             font-weight: bold;
         }
         nav a:hover {
-            color: #00FFFF;
-            text-shadow: 0px 0px 10px #00FFFF;
+            color: var(--primary-color);
+            text-shadow: 0px 0px 10px var(--primary-color);
         }
         .hero {
             height: 100vh;
@@ -60,17 +66,39 @@
             object-fit: cover;
             z-index: -1;
         }
-        .logo-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .logo-container img {
-            width: 150px;
-        }
         .section {
             padding: 100px 5%;
             text-align: center;
             background: url('Assets/Fondo_Portada.jpg') no-repeat center center/cover;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .about-content img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.3);
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
         }
         .pdf-button {
             display: block;
@@ -80,16 +108,35 @@
         .pdf-button a {
             display: inline-block;
             padding: 15px 30px;
-            border: 2px solid #00FFFF;
-            color: #00FFFF;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
         }
         .pdf-button a:hover {
-            background: #00FFFF;
+            background: var(--primary-color);
             color: #000;
-            box-shadow: 0px 0px 15px #00FFFF;
+            box-shadow: 0px 0px 15px var(--primary-color);
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -98,7 +145,6 @@
         <div class="logo">Gerard Martínez</div>
         <nav>
             <a href="#about">Sobre mí</a>
-            <a href="#services">Servicios</a>
             <a href="#portfolio">Portafolio</a>
             <a href="#contact">Contacto</a>
         </nav>
@@ -108,15 +154,34 @@
             <source src="Assets/Naia2.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="logo-container">
-        <img src="Assets/Logo.png" alt="Logo">
-    </div>
     <section id="about" class="section">
         <h2>Sobre mí</h2>
-        <p>Editor, colorista, artista VFX y videomapping con más de una década de experiencia.</p>
+        <div class="about-content">
+            <img src="Assets/Cara_Artista.png" alt="Artista">
+            <p>Editor, colorista, artista VFX y videomapping con más de una década de experiencia. Me especializo en la creación de experiencias visuales inmersivas utilizando tecnología avanzada y herramientas digitales.</p>
+        </div>
     </section>
-    <div class="pdf-button">
-        <a href="Assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank">Ver Portafolio</a>
-    </div>
+    <section id="portfolio" class="section">
+        <h2>Portafolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Proyecto 1</div>
+            <div class="portfolio-item">Proyecto 2</div>
+            <div class="portfolio-item">Proyecto 3</div>
+        </div>
+        <div class="pdf-button">
+            <a href="Assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank">Ver Portafolio</a>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Contáctame</h2>
+        <p>Email: gerarmanuel31@gmail.com</p>
+        <p>Teléfono: +34 600 123 456</p>
+        <div class="social-links">
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">ArtStation</a>
+            <a href="#" target="_blank">YouTube</a>
+        </div>
+    </section>
 </body>
 </html>
