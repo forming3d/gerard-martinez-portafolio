@@ -5,96 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerard Martínez - Portafolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00FFFF;
-            --secondary-color: #FF00FF;
-            --background-color: #000;
-            --text-color: #fff;
-        }
-        body {
-            background: var(--background-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary-color);
-            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
-        }
-        .logo {
-            font-family: 'Anton', sans-serif;
-            font-size: 2rem;
-            color: var(--primary-color);
-            text-transform: uppercase;
-        }
-        nav a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            margin: 0 15px;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: var(--primary-color);
-            text-shadow: 0px 0px 10px var(--primary-color);
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: url('Assets/hero-background.jpg') no-repeat center center/cover;
-        }
-        .section {
-            padding: 100px 5%;
-            text-align: center;
-        }
-        .portfolio-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .portfolio-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.3);
-            width: 300px;
-            text-align: center;
-        }
-        .portfolio-item:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
-        }
-        .contact-info p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact-info a:hover {
-            text-shadow: 0px 0px 10px var(--secondary-color);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -106,34 +18,90 @@
             <a href="#contact">Contacto</a>
         </nav>
     </header>
+    
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Creando Mundos Visuales</h1>
+            <p>VFX Artist | 3D Animator | Videomapping</p>
+            <a href="#portfolio" class="btn">Ver Portafolio</a>
+        </div>
+        <video autoplay loop muted class="hero-video">
+            <source src="Assets/Naia2.mp4" type="video/mp4">
+        </video>
+    </section>
+    
     <section id="about" class="section">
         <h2>Sobre mí</h2>
         <p>Editor, colorista, artista VFX y videomapping con más de una década de experiencia. Me especializo en la creación de experiencias visuales inmersivas utilizando tecnología avanzada y herramientas digitales.</p>
+        <img src="Assets/Cara_Artista.png" alt="Gerard Martínez" class="about-img">
     </section>
+    
     <section id="portfolio" class="section">
         <h2>Portafolio</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item">Proyecto 1</div>
-            <div class="portfolio-item">Proyecto 2</div>
-            <div class="portfolio-item">Proyecto 3</div>
+            <div class="portfolio-item">
+                <img src="Assets/proyecto1.jpg" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Descripción breve del proyecto.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="Assets/proyecto2.jpg" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Descripción breve del proyecto.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="Assets/proyecto3.jpg" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Descripción breve del proyecto.</p>
+            </div>
+        </div>
+        <div class="pdf-button">
+            <a href="Assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank" class="btn">Ver Portafolio Completo</a>
         </div>
     </section>
+    
     <section id="services" class="section">
         <h2>Servicios</h2>
-        <p>Ofrezco servicios de edición de video, efectos visuales, videomapping y producción digital. Contáctame para más detalles.</p>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Edición de Video</h3>
+                <p>Corrección de color, montaje y postproducción.</p>
+            </div>
+            <div class="service-item">
+                <h3>VFX & 3D Animation</h3>
+                <p>Creación de efectos visuales para cine y publicidad.</p>
+            </div>
+            <div class="service-item">
+                <h3>Videomapping</h3>
+                <p>Proyecciones inmersivas en grandes superficies.</p>
+            </div>
+        </div>
     </section>
+    
+    <section id="testimonials" class="section">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+            <p>"Gerard transformó nuestra visión en una obra de arte digital impresionante. ¡Altamente recomendado!"</p>
+            <h4>- Cliente Satisfecho</h4>
+        </div>
+    </section>
+    
     <section id="contact" class="section">
         <h2>Contáctame</h2>
         <div class="contact-info">
-            <p>Email: <a href="mailto:gerarmanuel31@gmail.com">gerarmanuel31@gmail.com</a></p>
+            <p>Email: <a href="mailto:forming3d@gmail.com">forming3d@gmail.com</a></p>
             <p>Teléfono: <a href="tel:+34600123456">+34 600 123 456</a></p>
         </div>
         <div class="social-links">
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">ArtStation</a>
-            <a href="#" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/forming_3d?igsh=MW9qbXJuaWtydnJnMw==" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/gerard-mart%C3%ADnez/" target="_blank">LinkedIn</a>
+            <a href="https://www.artstation.com/forming3d" target="_blank">ArtStation</a>
+            <a href="https://www.youtube.com/@gerardmartinez170" target="_blank">YouTube</a>
         </div>
     </section>
+    
+    <footer>
+        <p>&copy; 2024 Gerard Martínez - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
