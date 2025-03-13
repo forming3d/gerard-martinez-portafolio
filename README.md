@@ -1,1 +1,0 @@
-# gerard-martinez-portafolio
