@@ -5,7 +5,6 @@
     --light-bg: #FFFFFF;
     --text-dark: #333;
     --text-light: #FFF;
-    --font-din: 'DIN Condensed', sans-serif;
 }
 
 /* === Reset y estilos base === */
@@ -16,7 +15,7 @@
 }
 
 body {
-    font-family: var(--font-din);
+    font-family: 'Comic Neue', cursive;
     background-color: var(--dark-bg);
     color: var(--text-light);
     line-height: 1.6;
@@ -51,8 +50,9 @@ header {
 }
 
 .name {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
@@ -63,6 +63,7 @@ nav ul {
 }
 
 nav a {
+    font-family: 'Comic Neue', cursive;
     color: var(--text-light);
     text-decoration: none;
     font-size: 1.1rem;
@@ -111,12 +112,14 @@ nav a:hover::after {
 }
 
 .hero-content h1 {
+    font-family: 'Luckiest Guy', cursive;
     font-size: 4rem;
     margin-bottom: 1rem;
     letter-spacing: 4px;
 }
 
 .hero-content p {
+    font-family: 'Patrick Hand', cursive;
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
@@ -156,6 +159,7 @@ section {
 }
 
 h2 {
+    font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 3rem;
@@ -166,7 +170,7 @@ h2 {
 
 /* === Sección Sobre Mí === */
 .about-header {
-    background: rgba(0, 0, 0, 0.5); /* Sombreado negro con 50% de transparencia */
+    background: rgba(0, 0, 0, 0.5);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
@@ -189,6 +193,7 @@ h2 {
 }
 
 .about-text {
+    font-family: 'Patrick Hand', cursive;
     font-size: 1.1rem;
     line-height: 1.8;
     position: relative;
@@ -197,6 +202,7 @@ h2 {
 }
 
 .about-text h3 {
+    font-family: 'Luckiest Guy', cursive;
     font-size: 1.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -204,7 +210,7 @@ h2 {
 }
 
 .skills-container {
-    background: rgba(0, 0, 0, 0.5); /* Sombreado negro con 50% de transparencia */
+    background: rgba(0, 0, 0, 0.5);
     padding: 1.5rem;
     border-radius: 10px;
     border: 2px solid var(--primary-color);
@@ -221,6 +227,7 @@ h2 {
 }
 
 .skill-category h4 {
+    font-family: 'Bangers', cursive;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
@@ -232,6 +239,7 @@ h2 {
 }
 
 .skill-category li {
+    font-family: 'Comic Neue', cursive;
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
@@ -273,6 +281,7 @@ h2 {
 }
 
 .portfolio-title {
+    font-family: 'Luckiest Guy', cursive;
     color: var(--primary-color);
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -315,6 +324,7 @@ h2 {
 }
 
 .contact-info p {
+    font-family: 'Patrick Hand', cursive;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -348,6 +358,7 @@ h2 {
 }
 
 .contact-form button {
+    font-family: 'Bangers', cursive;
     background: var(--primary-color);
     color: var(--text-light);
     padding: 1rem 2rem;
@@ -368,6 +379,7 @@ footer {
 }
 
 footer p {
+    font-family: 'Comic Neue', cursive;
     margin: 0;
     font-size: 1rem;
     color: var(--text-light);
