@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerard Martínez - Portafolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Iconos de FontAwesome para redes sociales -->
+    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
         <div class="logo">
             <img src="assets/Logo.png" alt="Logo" class="logo-img">
@@ -25,25 +26,34 @@
         </nav>
     </header>
 
+    <!-- Sección de Inicio -->
     <section id="inicio" class="hero">
         <video autoplay muted loop id="video-bg">
             <source src="assets/Reel.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <h1>Creando mundos visuales</h1>
+            <p>Especialista en VFX, 3D Animación y Videomapping.</p>
         </div>
     </section>
 
+    <!-- Sección Sobre Mí -->
     <section id="sobre-mi">
         <h2>Sobre Mí</h2>
         <div class="about-content">
             <img src="assets/gerard.jpg" alt="Gerard Martínez">
-            <p>
-                Soy Gerard Martínez, especialista en VFX, 3D Animación y Videomapping. Con más de 10 años de experiencia, he trabajado en proyectos de cine, televisión y eventos inmersivos. Mi pasión es crear experiencias visuales únicas que conecten con el público.
-            </p>
+            <div class="about-text">
+                <p>
+                    Soy Gerard Martínez, un profesional con más de 10 años de experiencia en efectos visuales, animación 3D y videomapping. He trabajado en proyectos de cine, televisión y eventos inmersivos, colaborando con productoras internacionales y creando experiencias visuales únicas.
+                </p>
+                <p>
+                    Mi enfoque es combinar tecnología y creatividad para contar historias impactantes y memorables.
+                </p>
+            </div>
         </div>
     </section>
 
+    <!-- Sección Portafolio -->
     <section id="portafolio">
         <h2>Portafolio</h2>
         <div class="gallery">
@@ -53,10 +63,18 @@
                     <div class="overlay">Ver Portafolio</div>
                 </a>
             </div>
-            <!-- Más proyectos aquí -->
+            <div class="gallery-item">
+                <img src="assets/project1.jpg" alt="Proyecto 1">
+                <div class="overlay">Ver Detalles</div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/project2.jpg" alt="Proyecto 2">
+                <div class="overlay">Ver Detalles</div>
+            </div>
         </div>
     </section>
 
+    <!-- Sección Servicios -->
     <section id="servicios">
         <h2>Servicios</h2>
         <div class="services-grid">
@@ -75,6 +93,7 @@
         </div>
     </section>
 
+    <!-- Sección Contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
         <div class="contact-info">
@@ -89,6 +108,7 @@
         </div>
     </section>
 
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 Gerard Martínez. Todos los derechos reservados.</p>
     </footer>
