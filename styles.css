@@ -185,8 +185,15 @@ h2 {
     z-index: 1;
 }
 
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-image img {
     width: 100%;
+    max-width: 400px;
     border-radius: 10px;
     border: 8px solid white;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -262,6 +269,12 @@ h2 {
     transform: translateY(-10px);
 }
 
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .portfolio-overlay {
     position: absolute;
     top: 0;
@@ -311,4 +324,76 @@ h2 {
 }
 
 .service-card i {
-    font-size: 2.5rem
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* === Sección Contacto === */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info p {
+    font-family: 'DIN Condensed', sans-serif;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff3040;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-light);
+}
+
+.contact-form button {
+    font-family: 'DIN Condensed', sans-serif;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff3040;
+}
+
+/* === Footer === */
+footer {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'DIN Condensed', sans-serif;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-light);
+}
