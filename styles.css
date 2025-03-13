@@ -286,7 +286,7 @@ h2 {
 }
 
 .portfolio-item:nth-child(3) img { /* Tutoriales */
-    object-position: 80% center; /* Muestra el otro extremo de la imagen */
+    object-position: 20% center; /* Muestra el otro extremo de la imagen */
 }
 
 .portfolio-overlay {
