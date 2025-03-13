@@ -6,6 +6,14 @@ body {
     color: #fff;
     background-color: #1a1a1a;
     line-height: 1.6;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado */
+    padding: 0 20px; /* Espaciado lateral */
 }
 
 /* Encabezado */
@@ -33,7 +41,6 @@ header .logo {
     height: 100px; /* Tamaño fijo */
     border-radius: 50%; /* Para mantenerlo circular */
     object-fit: cover; /* Evita que se estire */
-}
 }
 
 nav ul {
@@ -89,147 +96,6 @@ nav ul li a:hover {
 
 .hero-content p {
     font-size: 24px;
-}
-
-/* Sección Sobre Mí */
-#sobre-mi {
-    padding: 80px 20px;
-    background-color: #222;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-content img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Sección Portafolio */
-#portafolio {
-    padding: 80px 20px;
-    background-color: #1a1a1a;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.gallery-item {
-    position: relative;
-    width: calc(33.333% - 20px);
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.gallery-item img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-.overlay div {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Sección Servicios */
-#servicios {
-    padding: 80px 20px;
-    background-color: #222;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-item {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.service-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.service-item p {
-    font-size: 16px;
-}
-
-/* Sección Contacto */
-#contacto {
-    padding: 80px 20px;
-    background-color: #1a1a1a;
-}
-
-.contact-info {
-    text-align: center;
-}
-
-.contact-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.social-links a {
-    margin: 0 10px;
-    color: #ff4081;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #fff;
 }
 
 /* Pie de página */
