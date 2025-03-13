@@ -1,6 +1,6 @@
 # Portafolio de Gerard Martínez
 
-Bienvenido al portafolio profesional de Gerard Martínez, especialista en VFX, 3D Animación y Videomapping.
+Bienvenido al portafolio profesional de Gerard Martínez, especialista en Edicion, VFX, y Videomapping.
 
 ## Tecnologías utilizadas
 - HTML
