@@ -273,6 +273,20 @@ h2 {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+/* Ajustes específicos para cada imagen */
+.portfolio-item:nth-child(1) img { /* Portafolio */
+    object-position: 70% center; /* Mueve la imagen hacia la izquierda */
+}
+
+.portfolio-item:nth-child(2) img { /* Mappingon */
+    object-position: 30% center; /* Mueve la imagen hacia la izquierda */
+}
+
+.portfolio-item:nth-child(3) img { /* Tutoriales */
+    object-position: 80% center; /* Muestra el otro extremo de la imagen */
 }
 
 .portfolio-overlay {
