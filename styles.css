@@ -1,11 +1,11 @@
 /* === Variables globales === */
 :root {
-    --amarillo-mostaza: rgb(232, 196, 80);
-    --azul-oscuro: rgb(69, 69, 69);
-    --gris-oscuro: rgb(68, 68, 68);
-    --azul-grisaceo: rgb(97, 97, 97);
-    --gris-medio: rgb(97, 97, 97);
-    --texto-claro: #FFFFFF;
+    --primary-color: #FF4A57; /* Rojo anterior (puedes cambiarlo si lo prefieres) */
+    --amarillo-mostaza: rgb(232, 196, 80); /* Nuevo color de acento */
+    --dark-bg: #1A1A1A;
+    --light-bg: #FFFFFF;
+    --text-dark: #333;
+    --text-light: #FFF;
 }
 
 /* === Reset y estilos base === */
@@ -17,8 +17,8 @@
 
 body {
     font-family: 'DIN Condensed', sans-serif;
-    background-color: var(--azul-oscuro);
-    color: var(--texto-claro);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -29,11 +29,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    background: var(--azul-oscuro);
+    background: rgba(0, 0, 0, 0.95);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid var(--amarillo-mostaza);
+    border-bottom: 2px solid var(--amarillo-mostaza); /* Amarillo como borde */
 }
 
 .logo-container {
@@ -47,7 +47,7 @@ header {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--texto-claro);
+    border: 2px solid var(--text-light);
 }
 
 .name {
@@ -55,7 +55,6 @@ header {
     font-size: 3rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--texto-claro);
 }
 
 nav ul {
@@ -66,7 +65,7 @@ nav ul {
 
 nav a {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--texto-claro);
+    color: var(--text-light);
     text-decoration: none;
     font-size: 1.1rem;
     position: relative;
@@ -80,7 +79,7 @@ nav a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--amarillo-mostaza);
+    background-color: var(--amarillo-mostaza); /* Amarillo como efecto hover */
     transition: width 0.3s;
 }
 
@@ -118,7 +117,6 @@ nav a:hover::after {
     font-size: 4rem;
     margin-bottom: 1rem;
     letter-spacing: 4px;
-    color: var(--texto-claro);
 }
 
 .hero-content p {
@@ -126,7 +124,7 @@ nav a:hover::after {
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
 }
 
 /* === Secciones generales === */
@@ -141,7 +139,7 @@ section {
 }
 
 .section-dark {
-    background: var(--azul-grisaceo);
+    background: rgba(0, 0, 0, 0.8);
     position: relative;
     overflow: hidden;
 }
@@ -158,8 +156,8 @@ section {
 }
 
 .section-light {
-    background: var(--gris-oscuro);
-    color: var(--texto-claro);
+    background: var(--light-bg);
+    color: var(--text-dark);
 }
 
 h2 {
@@ -170,7 +168,6 @@ h2 {
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
-    color: var(--texto-claro);
 }
 
 /* === Sección Sobre Mí === */
@@ -184,7 +181,7 @@ h2 {
 }
 
 .about-header p {
-    color: var(--texto-claro);
+    color: var(--text-light);
     font-size: 1.1rem;
     line-height: 1.8;
 }
@@ -208,7 +205,7 @@ h2 {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    border: 8px solid var(--amarillo-mostaza);
+    border: 8px solid var(--amarillo-mostaza); /* Amarillo como borde */
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
@@ -226,14 +223,14 @@ h2 {
     font-size: 1.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
 }
 
 .skills-container {
     background: rgba(0, 0, 0, 0.5);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 2px solid var(--amarillo-mostaza);
+    border: 2px solid var(--amarillo-mostaza); /* Amarillo como borde */
     display: grid;
     grid-template-columns: 1fr 1fr);
     gap: 2rem;
@@ -250,7 +247,7 @@ h2 {
     font-family: 'DIN Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
 }
 
 .skill-category ul {
@@ -262,7 +259,6 @@ h2 {
     font-family: 'DIN Condensed', sans-serif;
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    color: var(--texto-claro);
 }
 
 /* === Sección Proyectos === */
@@ -322,10 +318,10 @@ h2 {
 
 .portfolio-title {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
     font-size: 1.5rem;
     text-transform: uppercase;
-    border: 2px solid var(--amarillo-mostaza);
+    border: 2px solid var(--amarillo-mostaza); /* Amarillo como borde */
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.7);
@@ -350,26 +346,26 @@ h2 {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(232, 196, 80, 0.3);
+    box-shadow: 0 10px 20px rgba(232, 196, 80, 0.3); /* Amarillo como sombra */
 }
 
 .service-icon {
     font-size: 3rem;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
     margin-bottom: 1rem;
     transition: transform 0.3s, color 0.3s;
 }
 
 .service-card:hover .service-icon {
     transform: rotate(360deg);
-    color: rgb(210, 170, 60);
+    color: rgb(210, 170, 60); /* Amarillo oscuro al hacer hover */
 }
 
 .service-card h3 {
     font-family: 'DIN Condensed', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
 }
 
 .service-card p {
@@ -377,21 +373,20 @@ h2 {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    color: var(--texto-claro);
 }
 
 .service-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background: var(--amarillo-mostaza);
-    color: var(--texto-claro);
+    background: var(--amarillo-mostaza); /* Amarillo como fondo */
+    color: var(--text-light);
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
 .service-button:hover {
-    background: rgb(210, 170, 60);
+    background: rgb(210, 170, 60); /* Amarillo oscuro al hacer hover */
 }
 
 .service-card::before {
@@ -426,7 +421,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(69, 69, 69, 0.7); /* Fondo oscuro para mejorar la legibilidad */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para mejorar la legibilidad */
     z-index: 0;
 }
 
@@ -447,11 +442,11 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--texto-claro);
+    color: var(--text-light);
 }
 
 .contact-info i {
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
     font-size: 1.2rem;
 }
 
@@ -462,13 +457,13 @@ h2 {
 }
 
 .social-links a {
-    color: var(--amarillo-mostaza);
+    color: var(--amarillo-mostaza); /* Amarillo como acento */
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: rgb(210, 170, 60);
+    color: rgb(210, 170, 60); /* Amarillo oscuro al hacer hover */
 }
 
 .contact-form input,
@@ -478,7 +473,7 @@ h2 {
     margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    color: var(--texto-claro);
+    color: var(--text-light);
     font-family: 'DIN Condensed', sans-serif;
 }
 
@@ -488,8 +483,8 @@ h2 {
 
 .contact-form button {
     font-family: 'DIN Condensed', sans-serif;
-    background: var(--amarillo-mostaza);
-    color: var(--texto-claro);
+    background: var(--amarillo-mostaza); /* Amarillo como fondo */
+    color: var(--text-light);
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
@@ -497,12 +492,12 @@ h2 {
 }
 
 .contact-form button:hover {
-    background: rgb(210, 170, 60);
+    background: rgb(210, 170, 60); /* Amarillo oscuro al hacer hover */
 }
 
 /* === Footer === */
 footer {
-    background: var(--azul-oscuro);
+    background: rgba(0, 0, 0, 0.95);
     padding: 2rem 0;
     text-align: center;
 }
@@ -511,5 +506,5 @@ footer p {
     font-family: 'DIN Condensed', sans-serif;
     margin: 0;
     font-size: 1rem;
-    color: var(--texto-claro);
+    color: var(--text-light);
 }
