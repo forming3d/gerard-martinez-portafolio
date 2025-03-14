@@ -231,14 +231,6 @@ header {
 /* === Secciones generales === */
 section {
     padding: 5rem 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .container {
@@ -300,19 +292,12 @@ h2 {
     grid-template-columns: 1fr 2fr);
     gap: 3rem;
     align-items: start;
-    position: relative;
-    z-index: 1;
-}
-
-.about-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 2rem; /* Margen superior */
 }
 
 .about-image img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px; /* Tamaño de imagen reducido */
     border-radius: 10px;
     border: 8px solid var(--amarillo-mostaza);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -322,8 +307,6 @@ h2 {
     font-family: 'DIN Condensed', sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
-    position: relative;
-    z-index: 1;
     margin-top: 0;
 }
 
@@ -374,8 +357,8 @@ h2 {
 /* === Sección Proyectos === */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamaño más pequeño */
+    gap: 1.5rem; /* Espaciado reducido */
 }
 
 .portfolio-item {
@@ -386,26 +369,13 @@ h2 {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Efecto hover más sutil */
 }
 
 .portfolio-item img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 200px; /* Altura fija para las imágenes */
     object-fit: cover;
-}
-
-.portfolio-item:nth-child(1) img {
-    object-position: 70% center;
-}
-
-.portfolio-item:nth-child(2) img {
-    object-position: 30% center;
-}
-
-.portfolio-item:nth-child(3) img {
-    object-position: 80% center;
 }
 
 .portfolio-overlay {
@@ -429,7 +399,7 @@ h2 {
 .portfolio-title {
     font-family: 'DIN Condensed', sans-serif;
     color: var(--amarillo-mostaza);
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
     text-transform: uppercase;
     border: 2px solid var(--amarillo-mostaza);
     padding: 0.5rem 1rem;
@@ -621,29 +591,4 @@ footer p {
     margin: 0;
     font-size: 1rem;
     color: var(--text-light);
-}
-
-/* === Modo claro === */
-body.light-mode {
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-}
-
-body.light-mode .section-dark {
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-}
-
-/* === Botón para cambiar tema === */
-#theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--amarillo-mostaza);
-    color: #000;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000;
 }
