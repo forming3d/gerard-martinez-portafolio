@@ -8,4 +8,4 @@ Bienvenido al portafolio profesional de Gerard Martínez, especialista en Edicio
 - JavaScript
 
 ## Visita el sitio
-Puedes ver el sitio en vivo en [GitHub Pages](https://[tu-usuario].github.io/gerard-martinez-portafolio/).
+Puedes ver el sitio en vivo en [GitHub Pages](https://forming3d.github.io/gerard-martinez-portafolio/).
