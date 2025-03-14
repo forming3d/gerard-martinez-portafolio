@@ -1,10 +1,11 @@
 /* === Variables globales === */
 :root {
-    --primary-color: #FF4A57;
-    --dark-bg: #1A1A1A;
-    --light-bg: #FFFFFF;
-    --text-dark: #333;
-    --text-light: #FFF;
+    --amarillo-mostaza: rgb(232, 196, 80);
+    --azul-oscuro: rgb(69, 69, 69);
+    --gris-oscuro: rgb(68, 68, 68);
+    --azul-grisaceo: rgb(97, 97, 97);
+    --gris-medio: rgb(97, 97, 97);
+    --texto-claro: #FFFFFF;
 }
 
 /* === Reset y estilos base === */
@@ -16,8 +17,8 @@
 
 body {
     font-family: 'DIN Condensed', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+    background-color: var(--azul-oscuro);
+    color: var(--texto-claro);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -28,11 +29,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--azul-oscuro);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--amarillo-mostaza);
 }
 
 .logo-container {
@@ -46,7 +47,7 @@ header {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--text-light);
+    border: 2px solid var(--texto-claro);
 }
 
 .name {
@@ -54,6 +55,7 @@ header {
     font-size: 3rem;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color: var(--texto-claro);
 }
 
 nav ul {
@@ -64,7 +66,7 @@ nav ul {
 
 nav a {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--text-light);
+    color: var(--texto-claro);
     text-decoration: none;
     font-size: 1.1rem;
     position: relative;
@@ -78,7 +80,7 @@ nav a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--amarillo-mostaza);
     transition: width 0.3s;
 }
 
@@ -116,6 +118,7 @@ nav a:hover::after {
     font-size: 4rem;
     margin-bottom: 1rem;
     letter-spacing: 4px;
+    color: var(--texto-claro);
 }
 
 .hero-content p {
@@ -123,6 +126,7 @@ nav a:hover::after {
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
+    color: var(--amarillo-mostaza);
 }
 
 /* === Secciones generales === */
@@ -137,7 +141,7 @@ section {
 }
 
 .section-dark {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--azul-grisaceo);
     position: relative;
     overflow: hidden;
 }
@@ -154,8 +158,8 @@ section {
 }
 
 .section-light {
-    background: var(--light-bg);
-    color: var(--text-dark);
+    background: var(--gris-oscuro);
+    color: var(--texto-claro);
 }
 
 h2 {
@@ -166,6 +170,7 @@ h2 {
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+    color: var(--texto-claro);
 }
 
 /* === Sección Sobre Mí === */
@@ -179,7 +184,7 @@ h2 {
 }
 
 .about-header p {
-    color: var(--text-light);
+    color: var(--texto-claro);
     font-size: 1.1rem;
     line-height: 1.8;
 }
@@ -203,7 +208,7 @@ h2 {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    border: 8px solid white;
+    border: 8px solid var(--amarillo-mostaza);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
@@ -221,16 +226,16 @@ h2 {
     font-size: 1.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
 }
 
 .skills-container {
     background: rgba(0, 0, 0, 0.5);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--amarillo-mostaza);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr);
     gap: 2rem;
     margin-top: 1rem;
 }
@@ -245,7 +250,7 @@ h2 {
     font-family: 'DIN Condensed', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
 }
 
 .skill-category ul {
@@ -257,6 +262,7 @@ h2 {
     font-family: 'DIN Condensed', sans-serif;
     margin-bottom: 0.5rem;
     font-size: 1rem;
+    color: var(--texto-claro);
 }
 
 /* === Sección Proyectos === */
@@ -316,10 +322,10 @@ h2 {
 
 .portfolio-title {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
     font-size: 1.5rem;
     text-transform: uppercase;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--amarillo-mostaza);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.7);
@@ -344,26 +350,26 @@ h2 {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 74, 87, 0.3);
+    box-shadow: 0 10px 20px rgba(232, 196, 80, 0.3);
 }
 
 .service-icon {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
     margin-bottom: 1rem;
     transition: transform 0.3s, color 0.3s;
 }
 
 .service-card:hover .service-icon {
     transform: rotate(360deg);
-    color: #ff3040;
+    color: rgb(210, 170, 60);
 }
 
 .service-card h3 {
     font-family: 'DIN Condensed', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
 }
 
 .service-card p {
@@ -371,20 +377,21 @@ h2 {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--texto-claro);
 }
 
 .service-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background: var(--primary-color);
-    color: var(--text-light);
+    background: var(--amarillo-mostaza);
+    color: var(--texto-claro);
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
 .service-button:hover {
-    background: #ff3040;
+    background: rgb(210, 170, 60);
 }
 
 .service-card::before {
@@ -394,7 +401,7 @@ h2 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 74, 87, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(232, 196, 80, 0.1), transparent);
     transition: left 0.5s;
 }
 
@@ -419,7 +426,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para mejorar la legibilidad */
+    background: rgba(69, 69, 69, 0.7); /* Fondo oscuro para mejorar la legibilidad */
     z-index: 0;
 }
 
@@ -430,7 +437,7 @@ h2 {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr);
     gap: 3rem;
 }
 
@@ -440,11 +447,11 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-light);
+    color: var(--texto-claro);
 }
 
 .contact-info i {
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
     font-size: 1.2rem;
 }
 
@@ -455,13 +462,13 @@ h2 {
 }
 
 .social-links a {
-    color: var(--primary-color);
+    color: var(--amarillo-mostaza);
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #ff3040;
+    color: rgb(210, 170, 60);
 }
 
 .contact-form input,
@@ -471,7 +478,7 @@ h2 {
     margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    color: var(--text-light);
+    color: var(--texto-claro);
     font-family: 'DIN Condensed', sans-serif;
 }
 
@@ -481,8 +488,8 @@ h2 {
 
 .contact-form button {
     font-family: 'DIN Condensed', sans-serif;
-    background: var(--primary-color);
-    color: var(--text-light);
+    background: var(--amarillo-mostaza);
+    color: var(--texto-claro);
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
@@ -490,12 +497,12 @@ h2 {
 }
 
 .contact-form button:hover {
-    background: #ff3040;
+    background: rgb(210, 170, 60);
 }
 
 /* === Footer === */
 footer {
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--azul-oscuro);
     padding: 2rem 0;
     text-align: center;
 }
@@ -504,5 +511,5 @@ footer p {
     font-family: 'DIN Condensed', sans-serif;
     margin: 0;
     font-size: 1rem;
-    color: var(--text-light);
+    color: var(--texto-claro);
 }
