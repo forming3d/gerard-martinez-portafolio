@@ -54,4 +54,17 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.remove('hover-effect');
         });
     });
+
+    // Inicializar Swiper.js
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
 });
