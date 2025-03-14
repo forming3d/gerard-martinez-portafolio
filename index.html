@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DIN+Condensed:wght@700&family=Bangers&family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <!-- Encabezado -->
@@ -123,29 +125,44 @@
     <section id="proyectos" class="section-light">
         <div class="container">
             <h2>PROYECTOS</h2>
-            <div class="portfolio-grid">
-                <!-- Portafolio -->
-                <a href="assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada.jpg" alt="Portafolio 3D">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">PORTAFOLIO</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Proyecto 1 -->
+                    <div class="swiper-slide">
+                        <a href="assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank" class="portfolio-item">
+                            <img src="assets/Fondo_Portada.jpg" alt="Portafolio 3D">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">PORTAFOLIO</h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <!-- Proyecto 1 -->
-                <a href="https://mappingon.es" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada2.jpg" alt="Mappingon">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">MAPPINGON</h3>
+                    <!-- Proyecto 2 -->
+                    <div class="swiper-slide">
+                        <a href="https://mappingon.es" target="_blank" class="portfolio-item">
+                            <img src="assets/Fondo_Portada2.jpg" alt="Mappingon">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">MAPPINGON</h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <!-- Proyecto 2 (Tutoriales) -->
-                <a href="https://www.youtube.com/watch?v=OvJ6I2nbzA0&list=PL7oH9qFQ7eXybj4IYP6BEuR8HEFCerrIZ" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada3.jpg" alt="Tutoriales">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">TUTORIALES</h3>
+                    <!-- Proyecto 3 -->
+                    <div class="swiper-slide">
+                        <a href="https://www.youtube.com/watch?v=OvJ6I2nbzA0&list=PL7oH9qFQ7eXybj4IYP6BEuR8HEFCerrIZ" target="_blank" class="portfolio-item">
+                            <img src="assets/Fondo_Portada3.jpg" alt="Tutoriales">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">TUTORIALES</h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
+                <!-- Flechas de navegación -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Puntos indicadores -->
+                <div class="swiper-pagination"></div>
             </div>
+            <!-- Botón para cargar más proyectos -->
+            <button id="load-more">Cargar más proyectos</button>
         </div>
     </section>
 
@@ -219,6 +236,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
