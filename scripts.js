@@ -14,19 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    // Carrusel de proyectos
-    const swiper = new Swiper('.swiper-container', {
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
     // Validación del formulario de contacto
     const form = document.querySelector('.contact-form');
     const emailInput = form.querySelector('input[type="email"]');
@@ -66,33 +53,5 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('mouseleave', () => {
             card.classList.remove('hover-effect');
         });
-    });
-
-    // Carga dinámica de proyectos
-    const loadMoreButton = document.querySelector('#load-more');
-    const portfolioGrid = document.querySelector('.portfolio-grid');
-
-    loadMoreButton.addEventListener('click', async () => {
-        const response = await fetch('data/projects.json');
-        const projects = await response.json();
-
-        projects.forEach(project => {
-            const projectItem = document.createElement('div');
-            projectItem.classList.add('portfolio-item');
-            projectItem.innerHTML = `
-                <img src="${project.image}" alt="${project.title}">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">${project.title}</h3>
-                </div>
-            `;
-            portfolioGrid.appendChild(projectItem);
-        });
-    });
-
-    // Alternar entre modo oscuro y claro
-    const themeToggle = document.querySelector('#theme-toggle');
-
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
     });
 });
