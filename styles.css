@@ -513,3 +513,60 @@ footer p {
     font-size: 1rem;
     color: var(--text-light);
 }
+
+/* === Media Queries para Móviles === */
+@media (max-width: 768px) {
+    /* Encabezado */
+    header {
+        padding: 1rem;
+    }
+
+    .name {
+        font-size: 2rem; /* Reducir el tamaño del nombre */
+    }
+
+    nav ul {
+        gap: 1rem; /* Reducir el espacio entre enlaces */
+    }
+
+    /* Sección Hero */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Reducir el tamaño del título */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Reducir el tamaño del texto */
+    }
+
+    /* Sección Sobre Mí */
+    .about-grid {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+    }
+
+    .about-image img {
+        max-width: 100%; /* Ajustar la imagen al ancho de la pantalla */
+    }
+
+    /* Sección Servicios */
+    .services-grid {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+    }
+
+    .service-card {
+        padding: 1rem; /* Reducir el padding */
+    }
+
+    /* Sección Contacto */
+    .contact-content {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem; /* Reducir el padding */
+    }
+
+    .contact-form button {
+        padding: 0.8rem 1.5rem; /* Reducir el tamaño del botón */
+    }
+}
