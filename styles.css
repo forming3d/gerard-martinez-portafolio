@@ -71,7 +71,7 @@ header {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza); /* Cambio a amarillo mostaza */
+    background-color: var(--amarillo-mostaza);
     position: relative;
     transition: background-color 0.3s;
 }
@@ -82,7 +82,7 @@ header {
     position: absolute;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza); /* Cambio a amarillo mostaza */
+    background-color: var(--amarillo-mostaza);
     transition: transform 0.3s;
 }
 
@@ -120,8 +120,8 @@ header {
 
 .nav-menu a {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--text-light); /* Color blanco en escritorio */
-    text-decoration: none; /* Eliminar subrayado */
+    color: var(--text-light);
+    text-decoration: none;
     font-size: 1.1rem;
     position: relative;
     padding: 0.5rem 0;
@@ -135,7 +135,7 @@ header {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--amarillo-mostaza); /* Amarillo como efecto hover */
+    background-color: var(--amarillo-mostaza);
     transition: width 0.3s;
 }
 
@@ -161,14 +161,14 @@ header {
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out;
         z-index: 1000;
-        opacity: 0; /* Ocultar inicialmente */
-        visibility: hidden; /* Ocultar inicialmente */
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-menu.open {
         transform: translateY(0);
-        opacity: 1; /* Mostrar al abrir */
-        visibility: visible; /* Mostrar al abrir */
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-menu ul {
@@ -180,11 +180,11 @@ header {
     .nav-menu a {
         font-size: 1.2rem;
         padding: 0.5rem 0;
-        text-decoration: none; /* Eliminar subrayado */
+        text-decoration: none;
     }
 
     .nav-menu a::after {
-        display: none; /* Ocultar el efecto hover en móviles */
+        display: none;
     }
 }
 
@@ -289,11 +289,11 @@ h2 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     align-items: start;
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .about-image {
@@ -341,7 +341,7 @@ h2 {
 .skill-column {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .skill-category h4 {
@@ -538,7 +538,7 @@ h2 {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
 }
 
