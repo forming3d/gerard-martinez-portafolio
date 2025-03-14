@@ -1,11 +1,11 @@
 /* === Variables globales === */
 :root {
     --primary-color: #FF4A57; /* Rojo anterior (puedes cambiarlo si lo prefieres) */
-    --amarillo-mostaza: rgb(232, 196, 80); /* Nuevo color de acento */
-    --dark-bg: #1A1A1A;
-    --light-bg: #FFFFFF;
-    --text-dark: #333;
-    --text-light: #FFF;
+    --amarillo-mostaza: rgb(232, 196, 80); /* Amarillo como acento */
+    --dark-bg: #1A1A1A; /* Fondo oscuro */
+    --light-bg: #FFFFFF; /* Fondo claro */
+    --text-dark: #333; /* Texto oscuro */
+    --text-light: #FFF; /* Texto claro */
 }
 
 /* === Reset y estilos base === */
@@ -139,7 +139,7 @@ section {
 }
 
 .section-dark {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--dark-bg);
     position: relative;
     overflow: hidden;
 }
@@ -188,7 +188,7 @@ h2 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr);
     gap: 3rem;
     align-items: start;
     position: relative;
@@ -406,7 +406,7 @@ h2 {
 
 /* === Sección Contacto === */
 #contacto {
-    background-image: url('assets/banner_contacto.jpg');
+    background-image: url('assets/banner_contacto.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
