@@ -71,7 +71,7 @@ header {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza); /* Cambio a amarillo mostaza */
+    background-color: var(--amarillo-mostaza);
     position: relative;
     transition: background-color 0.3s;
 }
@@ -82,7 +82,7 @@ header {
     position: absolute;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza); /* Cambio a amarillo mostaza */
+    background-color: var(--amarillo-mostaza);
     transition: transform 0.3s;
 }
 
@@ -120,8 +120,8 @@ header {
 
 .nav-menu a {
     font-family: 'DIN Condensed', sans-serif;
-    color: var(--text-light); /* Color blanco en escritorio */
-    text-decoration: none; /* Eliminar subrayado */
+    color: var(--text-light);
+    text-decoration: none;
     font-size: 1.1rem;
     position: relative;
     padding: 0.5rem 0;
@@ -135,7 +135,7 @@ header {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--amarillo-mostaza); /* Amarillo como efecto hover */
+    background-color: var(--amarillo-mostaza);
     transition: width 0.3s;
 }
 
@@ -161,14 +161,14 @@ header {
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out;
         z-index: 1000;
-        opacity: 0; /* Ocultar inicialmente */
-        visibility: hidden; /* Ocultar inicialmente */
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-menu.open {
         transform: translateY(0);
-        opacity: 1; /* Mostrar al abrir */
-        visibility: visible; /* Mostrar al abrir */
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-menu ul {
@@ -180,11 +180,11 @@ header {
     .nav-menu a {
         font-size: 1.2rem;
         padding: 0.5rem 0;
-        text-decoration: none; /* Eliminar subrayado */
+        text-decoration: none;
     }
 
     .nav-menu a::after {
-        display: none; /* Ocultar el efecto hover en móviles */
+        display: none;
     }
 }
 
@@ -289,15 +289,15 @@ h2 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr);
+    grid-template-columns: 1fr 2fr;
     gap: 3rem;
     align-items: start;
-    margin-top: 2rem; /* Margen superior */
+    margin-top: 2rem;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 300px; /* Tamaño de imagen reducido */
+    max-width: 300px;
     border-radius: 10px;
     border: 8px solid var(--amarillo-mostaza);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -324,7 +324,7 @@ h2 {
     border-radius: 10px;
     border: 2px solid var(--amarillo-mostaza);
     display: grid;
-    grid-template-columns: 1fr 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 1rem;
 }
@@ -357,8 +357,8 @@ h2 {
 /* === Sección Proyectos === */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamaño más pequeño */
-    gap: 1.5rem; /* Espaciado reducido */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .portfolio-item {
@@ -366,15 +366,16 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
+    aspect-ratio: 1 / 1; /* Hace que los proyectos sean cuadrados */
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px); /* Efecto hover más sutil */
+    transform: translateY(-5px);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 200px; /* Altura fija para las imágenes */
+    height: 100%;
     object-fit: cover;
 }
 
@@ -399,7 +400,7 @@ h2 {
 .portfolio-title {
     font-family: 'DIN Condensed', sans-serif;
     color: var(--amarillo-mostaza);
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+    font-size: 1.2rem;
     text-transform: uppercase;
     border: 2px solid var(--amarillo-mostaza);
     padding: 0.5rem 1rem;
@@ -516,7 +517,7 @@ h2 {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
 }
 
@@ -591,4 +592,25 @@ footer p {
     margin: 0;
     font-size: 1rem;
     color: var(--text-light);
+}
+
+/* === Swiper.js === */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--amarillo-mostaza);
+}
+
+.swiper-pagination-bullet {
+    background: var(--amarillo-mostaza);
 }
