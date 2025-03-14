@@ -243,6 +243,7 @@ section {
     background: var(--dark-bg);
     position: relative;
     overflow: hidden;
+    z-index: 1; /* Asegura que el contenido esté por encima del video */
 }
 
 .section-dark .video-bg {
@@ -252,7 +253,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: 0; /* El video debe estar detrás del contenido */
     filter: brightness(0.4);
 }
 
@@ -294,13 +295,16 @@ h2 {
     align-items: start;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del video */
 }
 
 .about-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red; /* Solo para depuración */
+    position: relative;
+    z-index: 2; /* Asegura que la imagen esté por encima del video */
 }
 
 .about-image img {
