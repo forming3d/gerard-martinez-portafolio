@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función que se llama cuando el captcha se completa correctamente
     if (typeof onCaptchaSuccess === 'undefined') {
-        window.onCaptchaSuccess = function () {
+        window.onCaptchaSuccess = function (response) {
             captchaValido = true;
         };
     }
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Crear un FormData con los datos del formulario
             const formData = new FormData(contactForm);
-            formData.append('h-captcha-response', grecaptcha.getResponse()); // Añadir la respuesta de hCaptcha
+            formData.append('h-captcha-response', hcaptcha.getResponse()); // Usar hcaptcha en lugar de grecaptcha
 
             // Enviar el formulario usando Fetch API
             fetch(contactForm.action, {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     formStatus.classList.remove('error');
                     formStatus.classList.add('success');
                     contactForm.reset(); // Limpiar el formulario
-                    grecaptcha.reset(); // Reiniciar hCaptcha
+                    hcaptcha.reset(); // Reiniciar hCaptcha
                     captchaValido = false; // Reiniciar el estado del captcha
                 } else {
                     // Mensaje de error
@@ -97,5 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitBtn.textContent = 'ENVIAR MENSAJE';
             });
         });
+    }
+});
     }
 });
