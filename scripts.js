@@ -22,14 +22,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const formStatus = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
 
+    let captchaValido = false; // Variable para rastrear si el captcha está completado
+
+    // Función que se llama cuando el captcha se completa correctamente
+    window.onCaptchaSuccess = function () {
+        captchaValido = true;
+    };
+
+    // Función que se llama si hay un error en el captcha
+    window.onCaptchaError = function () {
+        captchaValido = false;
+    };
+
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Evitar el envío tradicional del formulario
-
-            // Verificar si hCaptcha fue completado
-            const hCaptchaResponse = grecaptcha.getResponse();
-            if (!hCaptchaResponse) {
-                formStatus.textContent = 'Por favor, completa el hCaptcha.';
+            // Verificar si el captcha está completado
+            if (!captchaValido) {
+                e.preventDefault(); // Evitar el envío del formulario
+                formStatus.textContent = 'Por favor, completa el captcha antes de enviar el mensaje.';
+                formStatus.classList.remove('success');
                 formStatus.classList.add('error');
                 return;
             }
@@ -40,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Crear un FormData con los datos del formulario
             const formData = new FormData(contactForm);
-            formData.append('h-captcha-response', hCaptchaResponse); // Añadir la respuesta de hCaptcha
+            formData.append('h-captcha-response', grecaptcha.getResponse()); // Añadir la respuesta de hCaptcha
 
             // Enviar el formulario usando Fetch API
             fetch(contactForm.action, {
@@ -54,18 +65,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response.ok) {
                     // Mensaje de éxito
                     formStatus.textContent = 'Mensaje enviado correctamente. ¡Gracias!';
+                    formStatus.classList.remove('error');
                     formStatus.classList.add('success');
                     contactForm.reset(); // Limpiar el formulario
                     grecaptcha.reset(); // Reiniciar hCaptcha
+                    captchaValido = false; // Reiniciar el estado del captcha
                 } else {
                     // Mensaje de error
                     formStatus.textContent = 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.';
+                    formStatus.classList.remove('success');
                     formStatus.classList.add('error');
                 }
             })
             .catch(error => {
                 // Mensaje de error
                 formStatus.textContent = 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.';
+                formStatus.classList.remove('success');
                 formStatus.classList.add('error');
             })
             .finally(() => {
