@@ -3,49 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Gerard Martínez, especialista en post-producción, VFX y videomapping con más de 10 años de experiencia en Madrid, España.">
+    <meta name="keywords" content="post-producción, VFX, videomapping, 3D, edición de video, Madrid">
+    
     <title>Gerard Martínez - Portafolio</title>
+    
+    <!-- Fuentes - Corregida la fuente DIN Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Saira+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome con carga diferida -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=DIN+Condensed:wght@700&family=Bangers&family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Encabezado -->
     <header>
         <div class="logo-container">
-            <img src="assets/Logo.png" alt="Logo" class="logo-img">
+            <img src="assets/Logo.png" alt="Logo de Gerard Martínez" class="logo-img">
             <span class="name">GERARD MARTÍNEZ</span>
         </div>
         <!-- Botón de menú para móviles -->
-        <button class="menu-toggle" aria-label="Abrir menú">
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
             <span class="menu-icon"></span>
         </button>
         <!-- Contenedor del menú -->
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#sobre-mi">SOBRE MÍ</a></li>
-                <li><a href="#proyectos">PROYECTOS</a></li>
-                <li><a href="#servicios">SERVICIOS</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
+        <nav id="nav-menu" class="nav-menu" aria-label="Navegación principal">
+            <ul role="menubar">
+                <li role="none"><a href="#inicio" role="menuitem">INICIO</a></li>
+                <li role="none"><a href="#sobre-mi" role="menuitem">SOBRE MÍ</a></li>
+                <li role="none"><a href="#proyectos" role="menuitem">PROYECTOS</a></li>
+                <li role="none"><a href="#servicios" role="menuitem">SERVICIOS</a></li>
+                <li role="none"><a href="#contacto" role="menuitem">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Sección Hero -->
     <section id="inicio" class="hero">
-        <video autoplay muted loop class="video-bg">
+        <!-- Reemplazar con un video optimizado o usar preload="metadata" -->
+        <video autoplay muted loop playsinline preload="metadata" class="video-bg">
             <source src="assets/Reel.mp4" type="video/mp4">
+            <!-- Agregar versión webm para mejor compatibilidad -->
+            <source src="assets/Reel.webm" type="video/webm">
+            <!-- Fallback para navegadores que no soportan video -->
+            <img src="assets/poster.jpg" alt="Showreel" class="fallback-img">
         </video>
         <div class="hero-content">
             <h1>CREANDO MUNDOS VISUALES</h1>
             <p>ESPECIALISTA EN POST-PRODUCCIÓN | VFX | VIDEOMAPPING</p>
+            <!-- Botón CTA -->
+            <a href="#contacto" class="cta-button">CONTÁCTAME</a>
         </div>
     </section>
 
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="section-dark">
-        <video autoplay muted loop class="video-bg">
+        <video autoplay muted loop playsinline preload="metadata" class="video-bg">
             <source src="assets/Video_Fondo_2.mp4" type="video/mp4">
+            <source src="assets/Video_Fondo_2.webm" type="video/webm">
+            <img src="assets/poster2.jpg" alt="Fondo Sobre Mí" class="fallback-img">
         </video>
         <div class="container">
             <div class="about-header">
@@ -57,7 +80,7 @@
             <div class="about-grid">
                 <!-- Foto con borde blanco -->
                 <div class="about-image">
-                    <img src="assets/gerard.jpg" alt="Gerard Martínez">
+                    <img src="assets/gerard.jpg" alt="Gerard Martínez" loading="lazy">
                 </div>
                 <!-- Biografía y habilidades -->
                 <div class="about-text">
@@ -126,21 +149,21 @@
             <div class="portfolio-grid">
                 <!-- Portafolio -->
                 <a href="assets/Portafolio_3D_Gerard_Martinez.pdf" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada.jpg" alt="Portafolio 3D">
+                    <img src="assets/Fondo_Portada.jpg" alt="Portafolio 3D" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">PORTAFOLIO</h3>
                     </div>
                 </a>
                 <!-- Proyecto 1 -->
                 <a href="https://mappingon.es" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada2.jpg" alt="Mappingon">
+                    <img src="assets/Fondo_Portada2.jpg" alt="Mappingon" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">MAPPINGON</h3>
                     </div>
                 </a>
                 <!-- Proyecto 2 (Tutoriales) -->
                 <a href="https://www.youtube.com/watch?v=OvJ6I2nbzA0&list=PL7oH9qFQ7eXybj4IYP6BEuR8HEFCerrIZ" target="_blank" class="portfolio-item">
-                    <img src="assets/Fondo_Portada3.jpg" alt="Tutoriales">
+                    <img src="assets/Fondo_Portada3.jpg" alt="Tutoriales" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">TUTORIALES</h3>
                     </div>
@@ -201,11 +224,12 @@
                         <a href="https://www.youtube.com/@gerardmartinez170" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <form class="contact-form" action="mailto:gmartinez@mappingon.es" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Nombre" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
-                    <button type="submit">ENVIAR MENSAJE</button>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Nombre" required aria-label="Tu nombre">
+                    <input type="email" name="email" placeholder="Email" required aria-label="Tu email">
+                    <textarea name="message" placeholder="Mensaje" rows="5" required aria-label="Tu mensaje"></textarea>
+                    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
+                    <div id="formStatus" class="form-status"></div>
                 </form>
             </div>
         </div>
