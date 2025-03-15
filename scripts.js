@@ -3,17 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const navMenu = document.querySelector('.nav-menu');
 
     // Toggle del menú móvil
-    menuToggle.addEventListener('click', function () {
-        navMenu.classList.toggle('open');
-        menuToggle.classList.toggle('open');
-    });
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+        });
+    }
 
     // Cerrar el menú al hacer clic en un enlace
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('open');
-            menuToggle.classList.remove('open');
+            if (navMenu && menuToggle) {
+                navMenu.classList.remove('open');
+                menuToggle.classList.remove('open');
+            }
         });
     });
 
@@ -25,16 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let captchaValido = false; // Variable para rastrear si el captcha está completado
 
     // Función que se llama cuando el captcha se completa correctamente
-    window.onCaptchaSuccess = function () {
-        captchaValido = true;
-    };
+    if (typeof onCaptchaSuccess === 'undefined') {
+        window.onCaptchaSuccess = function () {
+            captchaValido = true;
+        };
+    }
 
     // Función que se llama si hay un error en el captcha
-    window.onCaptchaError = function () {
-        captchaValido = false;
-    };
+    if (typeof onCaptchaError === 'undefined') {
+        window.onCaptchaError = function () {
+            captchaValido = false;
+        };
+    }
 
-    if (contactForm) {
+    if (contactForm && formStatus && submitBtn) {
         contactForm.addEventListener('submit', function (e) {
             // Verificar si el captcha está completado
             if (!captchaValido) {
@@ -90,5 +98,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-});
 });
