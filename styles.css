@@ -1,11 +1,13 @@
 /* === Variables globales === */
 :root {
     --primary-color: #FF4A57;
-    --amarillo-mostaza: rgb(232, 196, 80);
+    --accent-color: rgb(232, 196, 80);
     --dark-bg: #1A1A1A;
     --light-bg: #FFFFFF;
     --text-dark: #333;
     --text-light: #FFF;
+    --transition-speed: 0.3s;
+    --font-heading: 'Saira Condensed', sans-serif;
 }
 
 /* === Reset y estilos base === */
@@ -16,7 +18,7 @@
 }
 
 body {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     background-color: var(--dark-bg);
     color: var(--text-light);
     line-height: 1.6;
@@ -33,7 +35,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid var(--amarillo-mostaza);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .logo-container {
@@ -71,9 +73,9 @@ header {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza);
+    background-color: var(--accent-color);
     position: relative;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-speed);
 }
 
 .menu-icon::before,
@@ -82,8 +84,8 @@ header {
     position: absolute;
     width: 25px;
     height: 2px;
-    background-color: var(--amarillo-mostaza);
-    transition: transform 0.3s;
+    background-color: var(--accent-color);
+    transition: transform var(--transition-speed);
 }
 
 .menu-icon::before {
@@ -119,7 +121,7 @@ header {
 }
 
 .nav-menu a {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     color: var(--text-light);
     text-decoration: none;
     font-size: 1.1rem;
@@ -135,8 +137,8 @@ header {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--amarillo-mostaza);
-    transition: width 0.3s;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed);
 }
 
 .nav-menu a:hover::after {
@@ -159,7 +161,7 @@ header {
         align-items: flex-start;
         padding: 1rem;
         transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform var(--transition-speed) ease-in-out;
         z-index: 1000;
         opacity: 0;
         visibility: hidden;
@@ -221,11 +223,30 @@ header {
 }
 
 .hero-content p {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--accent-color);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background var(--transition-speed);
+}
+
+.cta-button:hover {
+    background: rgb(210, 170, 60);
+    transform: scale(1.05);
 }
 
 /* === Secciones generales === */
@@ -243,7 +264,7 @@ section {
     background: var(--dark-bg);
     position: relative;
     overflow: hidden;
-    z-index: 1; /* Asegura que el contenido esté por encima del video */
+    z-index: 1;
 }
 
 .section-dark .video-bg {
@@ -253,7 +274,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* El video debe estar detrás del contenido */
+    z-index: 0;
     filter: brightness(0.4);
 }
 
@@ -263,7 +284,7 @@ section {
 }
 
 h2 {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 3rem;
@@ -296,7 +317,7 @@ h2 {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    z-index: 2; /* Asegura que el contenido esté por encima del video */
+    z-index: 2;
 }
 
 .about-image {
@@ -304,19 +325,19 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2; /* Asegura que la imagen esté por encima del video */
+    z-index: 2;
 }
 
 .about-image img {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    border: 8px solid var(--amarillo-mostaza);
+    border: 8px solid var(--accent-color);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .about-text {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     line-height: 1.8;
     position: relative;
@@ -325,18 +346,18 @@ h2 {
 }
 
 .about-text h3 {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
 }
 
 .skills-container {
     background: rgba(0, 0, 0, 0.5);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 2px solid var(--amarillo-mostaza);
+    border: 2px solid var(--accent-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -350,10 +371,10 @@ h2 {
 }
 
 .skill-category h4 {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
 }
 
 .skill-category ul {
@@ -362,7 +383,7 @@ h2 {
 }
 
 .skill-category li {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     margin-bottom: 0.5rem;
     font-size: 1rem;
     color: var(--text-light);
@@ -379,7 +400,7 @@ h2 {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform var(--transition-speed);
 }
 
 .portfolio-item:hover {
@@ -416,7 +437,7 @@ h2 {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-speed);
 }
 
 .portfolio-item:hover .portfolio-overlay {
@@ -424,11 +445,11 @@ h2 {
 }
 
 .portfolio-title {
-    font-family: 'DIN Condensed', sans-serif;
-    color: var(--amarillo-mostaza);
+    font-family: var(--font-heading);
+    color: var(--accent-color);
     font-size: 1.5rem;
     text-transform: uppercase;
-    border: 2px solid var(--amarillo-mostaza);
+    border: 2px solid var(--accent-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.7);
@@ -446,7 +467,7 @@ h2 {
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     position: relative;
     overflow: hidden;
 }
@@ -458,9 +479,9 @@ h2 {
 
 .service-icon {
     font-size: 3rem;
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
     margin-bottom: 1rem;
-    transition: transform 0.3s, color 0.3s;
+    transition: transform var(--transition-speed), color var(--transition-speed);
 }
 
 .service-card:hover .service-icon {
@@ -469,14 +490,14 @@ h2 {
 }
 
 .service-card h3 {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
 }
 
 .service-card p {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -485,11 +506,11 @@ h2 {
 .service-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background: var(--amarillo-mostaza);
+    background: var(--accent-color);
     color: #000;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background var(--transition-speed);
 }
 
 .service-button:hover {
@@ -548,7 +569,7 @@ h2 {
 }
 
 .contact-info p {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -557,7 +578,7 @@ h2 {
 }
 
 .contact-info i {
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
     font-size: 1.2rem;
 }
 
@@ -568,9 +589,9 @@ h2 {
 }
 
 .social-links a {
-    color: var(--amarillo-mostaza);
+    color: var(--accent-color);
     font-size: 1.5rem;
-    transition: color 0.3s;
+    transition: color var(--transition-speed);
 }
 
 .social-links a:hover {
@@ -585,7 +606,7 @@ h2 {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: var(--text-light);
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
 }
 
 .contact-form textarea {
@@ -593,17 +614,36 @@ h2 {
 }
 
 .contact-form button {
-    font-family: 'DIN Condensed', sans-serif;
-    background: var(--amarillo-mostaza);
+    font-family: var(--font-heading);
+    background: var(--accent-color);
     color: #000;
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background var(--transition-speed);
 }
 
 .contact-form button:hover {
     background: rgb(210, 170, 60);
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #fff;
+}
+
+.form-status.error {
+    display: block;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #fff;
 }
 
 /* === Footer === */
@@ -614,8 +654,48 @@ footer {
 }
 
 footer p {
-    font-family: 'DIN Condensed', sans-serif;
+    font-family: var(--font-heading);
     margin: 0;
     font-size: 1rem;
     color: var(--text-light);
+}
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .name {
+        font-size: 2rem;
+    }
+    
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .section-dark,
+    .section-light {
+        padding: 3rem 0;
+    }
 }
