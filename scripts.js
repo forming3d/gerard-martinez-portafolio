@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+});
 
     // Manejo del formulario de contacto
     const contactForm = document.getElementById('contactForm');
