@@ -206,17 +206,49 @@
                     </div>
                 </div>
                 <form id="contactForm" class="contact-form" action="https://formspree.io/f/mpwpwqeq" method="POST">
-                    <input type="text" name="name" placeholder="Nombre" required aria-label="Tu nombre">
-                    <input type="email" name="email" placeholder="Email" required aria-label="Tu email">
-                    <textarea name="message" placeholder="Mensaje" rows="5" required aria-label="Tu mensaje"></textarea>
-                    <div class="h-captcha"
-                         data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
-                         data-callback="onCaptchaSuccess"
-                         data-error-callback="onCaptchaError">
-                    </div>
-                    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
-                    <div id="formStatus" class="form-status"></div>
-                </form>
+    <!-- Campo de nombre -->
+    <input 
+        type="text" 
+        name="name" 
+        placeholder="Nombre" 
+        required 
+        aria-label="Tu nombre" 
+        autocomplete="name"
+    >
+
+    <!-- Campo de email -->
+    <input 
+        type="email" 
+        name="email" 
+        placeholder="Email" 
+        required 
+        aria-label="Tu email" 
+        autocomplete="email"
+    >
+
+    <!-- Campo de mensaje -->
+    <textarea 
+        name="message" 
+        placeholder="Mensaje" 
+        rows="5" 
+        required 
+        aria-label="Tu mensaje"
+    ></textarea>
+
+    <!-- hCaptcha -->
+    <div 
+        class="h-captcha"
+        data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
+        data-callback="onCaptchaSuccess"
+        data-error-callback="onCaptchaError"
+    ></div>
+
+    <!-- Botón de enviar -->
+    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
+
+    <!-- Estado del formulario -->
+    <div id="formStatus" class="form-status"></div>
+</form>
             </div>
         </div>
     </section>
