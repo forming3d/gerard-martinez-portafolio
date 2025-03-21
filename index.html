@@ -210,84 +210,66 @@
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="section-light">
-        <div class="container">
-            <h2>CONTACTO</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> gmartinez@mappingon.es</p>
-                    <p><i class="fas fa-phone"></i> +34 644 607 915</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Jorge Juan 139, 28028 Madrid, España</p>
-                    <div class="social-links">
-                        <a href="https://www.artstation.com/forming3d" target="_blank"><i class="fab fa-artstation"></i></a>
-                        <a href="https://www.linkedin.com/in/gerard-martínez/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/forming_3d" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@gerardmartinez170" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
+   <!-- Sección Contacto -->
+<section id="contacto" class="section-light">
+    <div class="container">
+        <h2>CONTACTO</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> gmartinez@mappingon.es</p>
+                <p><i class="fas fa-phone"></i> +34 644 607 915</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jorge Juan 139, 28028 Madrid, España</p>
+                <div class="social-links">
+                    <a href="https://www.artstation.com/forming3d" target="_blank"><i class="fab fa-artstation"></i></a>
+                    <a href="https://www.linkedin.com/in/gerard-martínez/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/forming_3d" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@gerardmartinez170" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
-                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mpwpwqeq" method="POST">
-                    <!-- Campo de nombre -->
-                    <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Nombre" 
-                        required 
-                        aria-label="Tu nombre" 
-                        autocomplete="name"
-                    >
-
-                    <!-- Campo de email -->
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Email" 
-                        required 
-                        aria-label="Tu email" 
-                        autocomplete="email"
-                    >
-
-                    <!-- Campo de mensaje -->
-                    <textarea 
-                        name="message" 
-                        placeholder="Mensaje" 
-                        rows="5" 
-                        required 
-                        aria-label="Tu mensaje"
-                    ></textarea>
-
-                    <!-- Botón para activar/desactivar el captcha -->
-                    <button type="button" id="toggleCaptcha">Activar Captcha</button>
-
-                    <!-- hCaptcha -->
-                    <div 
-                        id="captchaContainer"
-                        class="h-captcha"
-                        data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
-                        data-callback="onCaptchaSuccess"
-                        data-error-callback="onCaptchaError"
-                        style="display: none;"
-                    ></div>
-
-                    <!-- Botón de enviar -->
-                    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
-
-                    <!-- Estado del formulario -->
-                    <div id="formStatus" class="form-status"></div>
-                </form>
             </div>
-        </div>
-    </section>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mpwpwqeq" method="POST">
+                <!-- Campo de nombre -->
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Nombre" 
+                    required 
+                    aria-label="Tu nombre" 
+                    autocomplete="name"
+                >
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 GERARD MARTÍNEZ. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+                <!-- Campo de email -->
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    required 
+                    aria-label="Tu email" 
+                    autocomplete="email"
+                >
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-</body>
-</html>
+                <!-- Campo de mensaje -->
+                <textarea 
+                    name="message" 
+                    placeholder="Mensaje" 
+                    rows="5" 
+                    required 
+                    aria-label="Tu mensaje"
+                ></textarea>
+
+                <!-- hCaptcha -->
+                <div 
+                    class="h-captcha"
+                    data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
+                    data-callback="onCaptchaSuccess"
+                    data-error-callback="onCaptchaError"
+                ></div>
+
+                <!-- Botón de enviar -->
+                <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
+
+                <!-- Estado del formulario -->
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+</section>
