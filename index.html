@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Política de seguridad de contenido (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://forming3d.github.io data:;">
+    <!-- Política de seguridad de contenido (CSP) actualizada -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://js.hcaptcha.com; img-src 'self' https://forming3d.github.io data:;">
     <title>Gerard Martínez - Especialista en VFX, Postproducción y Videomapping</title>
     <!-- Precarga de recursos críticos -->
     <link rel="preload" href="styles.css" as="style">
@@ -227,49 +227,49 @@
                     </div>
                 </div>
                 <form id="contactForm" class="contact-form" action="https://formspree.io/f/mpwpwqeq" method="POST">
-    <!-- Campo de nombre -->
-    <input 
-        type="text" 
-        name="name" 
-        placeholder="Nombre" 
-        required 
-        aria-label="Tu nombre" 
-        autocomplete="name"
-    >
+                    <!-- Campo de nombre -->
+                    <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Nombre" 
+                        required 
+                        aria-label="Tu nombre" 
+                        autocomplete="name"
+                    >
 
-    <!-- Campo de email -->
-    <input 
-        type="email" 
-        name="email" 
-        placeholder="Email" 
-        required 
-        aria-label="Tu email" 
-        autocomplete="email"
-    >
+                    <!-- Campo de email -->
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        required 
+                        aria-label="Tu email" 
+                        autocomplete="email"
+                    >
 
-    <!-- Campo de mensaje -->
-    <textarea 
-        name="message" 
-        placeholder="Mensaje" 
-        rows="5" 
-        required 
-        aria-label="Tu mensaje"
-    ></textarea>
+                    <!-- Campo de mensaje -->
+                    <textarea 
+                        name="message" 
+                        placeholder="Mensaje" 
+                        rows="5" 
+                        required 
+                        aria-label="Tu mensaje"
+                    ></textarea>
 
-    <!-- hCaptcha -->
-   <div 
-    class="h-captcha"
-    data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
-    data-callback="onCaptchaSuccess"
-    data-error-callback="onCaptchaError"
-></div>
+                    <!-- hCaptcha -->
+                    <div 
+                        class="h-captcha"
+                        data-sitekey="68fc88a6-cdb0-4308-8182-891eb60687ee"
+                        data-callback="onCaptchaSuccess"
+                        data-error-callback="onCaptchaError"
+                    ></div>
 
-    <!-- Botón de enviar -->
-    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
+                    <!-- Botón de enviar -->
+                    <button type="submit" id="submitBtn">ENVIAR MENSAJE</button>
 
-    <!-- Estado del formulario -->
-    <div id="formStatus" class="form-status"></div>
-</form>
+                    <!-- Estado del formulario -->
+                    <div id="formStatus" class="form-status"></div>
+                </form>
             </div>
         </div>
     </section>
