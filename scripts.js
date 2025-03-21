@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
 
     // Toggle del menú móvil
     if (menuToggle && navMenu) {
@@ -22,25 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Manejo del formulario de contacto
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
-
     let captchaValido = false; // Variable para rastrear si el captcha está completado
 
-    // Función que se llama cuando el captcha se completa correctamente
-    if (typeof onCaptchaSuccess === 'undefined') {
-        window.onCaptchaSuccess = function (response) {
-            captchaValido = true;
-        };
-    }
+    // Callback cuando el captcha se completa correctamente
+    window.onCaptchaSuccess = function (response) {
+        console.log("Captcha completado:", response);
+        captchaValido = true;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
+    };
 
-    // Función que se llama si hay un error en el captcha
-    if (typeof onCaptchaError === 'undefined') {
-        window.onCaptchaError = function () {
-            captchaValido = false;
-        };
-    }
+    // Callback cuando hay un error en el captcha
+    window.onCaptchaError = function () {
+        console.log("Error en hCaptcha");
+        captchaValido = false;
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+    };
 
     if (contactForm && formStatus && submitBtn) {
         contactForm.addEventListener('submit', function (e) {
@@ -50,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 formStatus.textContent = 'Por favor, completa el captcha antes de enviar el mensaje.';
                 formStatus.classList.remove('success');
                 formStatus.classList.add('error');
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.5";
                 return;
             }
 
@@ -98,4 +101,5 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+});
 });
