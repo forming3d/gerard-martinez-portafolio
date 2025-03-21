@@ -42,6 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     }
 
+    // Botón para activar/desactivar el captcha
+    const toggleCaptchaButton = document.getElementById('toggleCaptcha');
+    const captchaContainer = document.getElementById('captchaContainer');
+
+    if (toggleCaptchaButton && captchaContainer) {
+        toggleCaptchaButton.addEventListener('click', function () {
+            if (captchaContainer.style.display === 'none') {
+                captchaContainer.style.display = 'block';
+                toggleCaptchaButton.textContent = 'Desactivar Captcha';
+            } else {
+                captchaContainer.style.display = 'none';
+                toggleCaptchaButton.textContent = 'Activar Captcha';
+            }
+        });
+    }
+
     if (contactForm && formStatus && submitBtn) {
         contactForm.addEventListener('submit', function (e) {
             // Verificar si el captcha está completado
