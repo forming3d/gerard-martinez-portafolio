@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerard Martínez - Especialista en VFX</title>
     
     <!-- Metaetiquetas SEO -->
@@ -79,11 +79,105 @@
             
             <!-- Tercer video -->
             <div role="group" aria-roledescription="slide">
-                <video autoplay muted loop playsinline preload="auto" aria-label="Demo de efectos visuales: Secuencia de videomapping arquitectónico">
-                    <source src="assets/Reel_3.mp4" type="video/mp4">
-                    <source src="assets/Reel_3.webm" type="video/webm">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
+                document.addEventListener('DOMContentLoaded', function() {
+    // ===== INICIALIZACIÓN DE AOS =====
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 120
+    });
+
+// ===== CARRUSEL HERO ===== (Código actualizado)
+$('.video-container').slick({
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 800,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    mobileFirst: true,
+    prevArrow: '<button type="button" class="slick-prev" aria-label="Video anterior"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next" aria-label="Video siguiente"><i class="fas fa-chevron-right"></i></button>',
+    // Eliminar el breakpoint problemático
+});
+
+    // ===== FANCYBOX GALERÍA =====
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+            "zoom",
+            "slideShow",
+            "fullScreen",
+            "download",
+            "thumbs",
+            "close"
+        ],
+        animationEffect: "zoom",
+        transitionEffect: "circular",
+        loop: true,
+        gutter: 20
+    });
+
+    // ===== MENÚ MÓVIL =====
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+        this.classList.toggle('open');
+        this.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+    });
+
+    // ===== FORMULARIO DE CONTACTO =====
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validación hCaptcha
+            if (typeof hcaptcha !== 'undefined') {
+                const response = hcaptcha.getResponse();
+                if (!response) {
+                    showFormStatus('Por favor, completa el captcha', 'error');
+                    return;
+                }
+            }
+
+            // Envío del formulario
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showFormStatus('Mensaje enviado correctamente', 'success');
+                    this.reset();
+                    if (typeof hcaptcha !== 'undefined') hcaptcha.reset();
+                } else {
+                    throw new Error('Error en el servidor');
+                }
+            })
+            .catch(error => {
+                showFormStatus('Error al enviar el mensaje', 'error');
+                console.error('Error:', error);
+            });
+        });
+    }
+
+    // Función auxiliar para mostrar estados
+    function showFormStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+        formStatus.style.display = 'block';
+    }
+});
             </div>
         </div>
         <div class="hero-content">
@@ -176,7 +270,7 @@
                         <h3 class="portfolio-title">PORTAFOLIO</h3>
                     </div>
                 </a>
-                <a href="https://mappingon.es" target="_blank" class="portfolio-item" data-aos="zoom-in"
+                <a href="https://mappingon.es" target="_blank" rel="noopener" class="portfolio-item" data-aos="zoom-in"
                     data-aos-delay="150">
                     <img src="assets/Fondo_Portada2.webp" alt="Proyecto Mappingon" loading="lazy">
                     <div class="portfolio-overlay">
@@ -184,7 +278,7 @@
                     </div>
                 </a>
                 <a href="https://www.youtube.com/watch?v=OvJ6I2nbzA0&list=PL7oH9qFQ7eXybj4IYP6BEuR8HEFCerrIZ"
-                    target="_blank" class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+                    target="_blank" rel="noopener" class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
                     <img src="assets/Fondo_Portada3.webp" alt="Tutoriales" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">TUTORIALES</h3>
@@ -239,13 +333,13 @@
                     <p><i class="fas fa-phone"></i> +34 644 607 915</p>
                     <p><i class="fas fa-map-marker-alt"></i> Jorge Juan 139, 28028 Madrid, España</p>
                     <div class="social-links">
-                        <a href="https://www.artstation.com/forming3d" target="_blank"><i
+                        <a href="https://www.artstation.com/forming3d" target="_blank" rel="noopener" title="ArtStation de Gerard Martínez"><i
                                 class="fab fa-artstation"></i></a>
-                        <a href="https://www.linkedin.com/in/gerard-martínez/" target="_blank"><i
+                        <a href="https://www.linkedin.com/in/gerard-martínez/" target="_blank" rel="noopener" title="LinkedIn de Gerard Martínez"><i
                                 class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/forming_3d" target="_blank"><i
+                        <a href="https://www.instagram.com/forming_3d" target="_blank" rel="noopener" title="Instagram de Gerard Martínez"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@gerardmartinez170" target="_blank"><i
+                        <a href="https://www.youtube.com/@gerardmartinez170" target="_blank" rel="noopener" title="YouTube de Gerard Martínez"><i
                                 class="fab fa-youtube"></i></a>
                     </div>
                 </div>
