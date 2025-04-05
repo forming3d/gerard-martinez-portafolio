@@ -1,11 +1,12 @@
 // sw.js
 // ===== CONFIGURACIÓN =====
 const CACHE_NAME = 'v1'; // Versión del caché (actualizar en futuros cambios)
-const OFFLINE_PAGE = '/offline.html'; // Ruta de la página offline
+const OFFLINE_PAGE = 'offline.html'; // Ruta de la página offline
 
 // Lista de recursos críticos para precachear (ajustar según estructura del proyecto)
 const ASSETS = [
   '/',
+  'offline.html',
   'index.html',
   'styles.css',
   'scripts.js',
@@ -37,29 +38,20 @@ self.addEventListener('install', (event) => {
 
 // ===== ESTRATEGIA CACHE-FIRST =====
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request) // 1. Busca en caché
-      .then(response => {
-        if (response) {
-          console.log(`[SW] Sirviendo desde caché: ${event.request.url}`);
-          return response; // Devuelve recurso en caché
-        }
-        // 2. Si no está en caché, consulta red
-        return fetch(event.request)
-          .then(networkResponse => {
-            // Opcional: Almacena nuevos recursos en caché
-            return caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, networkResponse.clone());
-              return networkResponse;
-            });
-          })
-          .catch(() => {
-            // 3. Si falla, muestra página offline
-            console.log('[SW] Mostrando página offline');
-            return caches.match(OFFLINE_PAGE);
-          });
-      })
-  );
+  // Solo manejar solicitudes de navegación (HTML)
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => caches.match(OFFLINE_PAGE)) // Mostrar offline.html
+        .then(response => response || caches.match(OFFLINE_PAGE))
+    );
+  } else {
+    // Para otros recursos usar Cache-First
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => response || fetch(event.request))
+    );
+  }
 });
 
 // ===== LIMPIEZA DE CACHÉS ANTIGUOS =====
