@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Offline | Gerard Martínez</title>
+    <!-- Usa los mismos estilos del sitio -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="section-dark">
+    <div class="container" style="text-align: center; padding: 4rem;">
+        <!-- Mensaje principal -->
+        <h1 data-aos="zoom-in">¡Ups! Sin conexión</h1>
+        <br>
+        <p data-aos="fade-up" data-aos-delay="300">
+            El contenido no está disponible offline. Revisa tu conexión.
+        </p>
+        <br>
+        <!-- Botón para reintentar -->
+        <button 
+            onclick="location.reload()" 
+            class="hero-button" 
+            data-aos="fade-up" 
+            data-aos-delay="600"
+            style="margin-top: 10rem; padding: 1rem 2rem; font-size: 1.2rem; background-color: #D4AF37; color: white; border: none; border-radius: 5px; cursor: pointer;"
+        >
+            Reintentar conexión
+        </button>
+
+        <!-- Mensaje adicional -->
+        <p data-aos="fade-up" data-aos-delay="900" style="margin-top: 7rem;">
+            Si el problema persiste, verifica tu conexión a Internet o intenta más tarde.
+        </p>
+        <p data-aos="fade-up" data-aos-delay="1200">
+            También puedes visitar el sitio en otro momento.
+            <br>¡Gracias por tu paciencia!
+        </p>
+        <!-- Logo para consistencia visual -->
+        <img 
+            src="assets/Logo.png" 
+            alt="Logo" 
+            style="width: 200px; margin-top: 7rem;"
+            loading="lazy"
+        >
+    </div>
+</body>
+</html>
